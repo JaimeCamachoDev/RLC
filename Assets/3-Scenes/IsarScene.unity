@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3444310}
   - component: {fileID: 3444309}
   - component: {fileID: 3444313}
+  - component: {fileID: 3444314}
   m_Layer: 7
   m_Name: Rock
   m_TagString: Untagged
@@ -271,6 +272,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   cameraTransform: {fileID: 1332760350}
+--- !u!114 &3444314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957d4a77de8672e4c9ccd10023a5dcd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 8
+  groundCheckDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &415162485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1070,7 @@ GameObject:
   - component: {fileID: 1525516748}
   - component: {fileID: 1525516747}
   - component: {fileID: 1525516749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
