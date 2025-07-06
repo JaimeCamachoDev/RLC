@@ -6,10 +6,11 @@ public class JumpController : MonoBehaviour
     [Header("Salto")]
     public float jumpForce = 8f;
     public float groundCheckDistance = 0.2f;
-    public LayerMask groundLayer = ~0; // Por defecto, todo
+    public LayerMask groundLayer = ~0;
+    public float coyoteTime = 0.18f; // Tiempo de gracia en segundos
 
     private Rigidbody rb;
-    private bool isGrounded;
+    private float lastGroundedTime = -1f;
 
     void Awake()
     {
@@ -18,31 +19,40 @@ public class JumpController : MonoBehaviour
 
     void Update()
     {
-        // Solo saltar si está en el suelo y se presiona espacio
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        // Actualiza el estado de grounded y el timer de coyote
+        if (IsGrounded())
+            lastGroundedTime = Time.time;
+
+        // Salta si pulsas espacio y estï¿½ en suelo o dentro del coyote time
+        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded() || (Time.time - lastGroundedTime) <= coyoteTime))
         {
             Jump();
         }
     }
 
     /// <summary>
-    /// Lógica para el salto físico.
+    /// Lï¿½gica para el salto fï¿½sico.
     /// </summary>
     public void Jump()
     {
-        // Cancela cualquier impulso vertical previo y aplica el salto
-        Vector3 vel = rb.linearVelocity;
-        vel.y = 0;
+        // Cancela cualquier impulso vertical global previo y aplica el salto
+        Vector3 vel = rb.linearVelocity; // OJO: velocity es en world space
+        vel.y = 0f;
         rb.linearVelocity = vel;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // Siempre hacia arriba global
     }
 
     /// <summary>
-    /// Chequeo básico de si está en el suelo usando Raycast.
+    /// Chequeo robusto de si estï¿½ en el suelo usando Raycast desde la base del collider.
     /// </summary>
     public bool IsGrounded()
     {
-        // Raycast desde el centro hacia abajo
-        return Physics.Raycast(transform.position, Vector3.down, groundCheckDistance + 0.1f, groundLayer);
+        Collider col = GetComponent<Collider>();
+        Vector3 origin = col.bounds.center;
+        origin.y = col.bounds.min.y + 0.05f; // Ligeramente sobre la base
+        float checkDist = groundCheckDistance + 0.05f;
+
+        // Puedes aï¿½adir mï¿½s raycasts alrededor si la roca es muy ancha o irregular
+        return Physics.Raycast(origin, Vector3.down, checkDist, groundLayer);
     }
 }
