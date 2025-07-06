@@ -15,6 +15,8 @@ public class CinemachineSetter : MonoBehaviour
     private void Start()
     {
         ForceSwitchOrbital();
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false;
     }
     [ContextMenu("Force Switch Orbital")]
     public void ForceSwitchOrbital()
