@@ -3,19 +3,33 @@ using UnityEngine;
 public class SimpleWASDCameraController : MonoBehaviour
 {
     public float moveForce = 30f;
+    float _moveForce;
+    [Tooltip("Esto multiplica a la velocidad de movimiento")]
+    public float airRestriction = 0.2f;
     public Transform cameraTransform;
     public CustomGravityTarget gravityTarget; // Referencia al script que lleva la gravedad actual
 
     private Rigidbody rb;
+    private JumpController jumpController;
 
     void Awake()
     {
+        _moveForce = moveForce;
         rb = GetComponent<Rigidbody>();
+        jumpController = GetComponent<JumpController>();
         if (gravityTarget == null) gravityTarget = GetComponent<CustomGravityTarget>();
     }
 
     void FixedUpdate()
     {
+        if (jumpController.CheckIfCanJump())
+        {
+            moveForce = _moveForce;
+        }
+        else
+        {
+            moveForce = _moveForce * airRestriction;
+        }
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 

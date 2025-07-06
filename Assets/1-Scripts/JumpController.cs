@@ -24,12 +24,15 @@ public class JumpController : MonoBehaviour
             lastGroundedTime = Time.time;
 
         // Salta si pulsas espacio y est� en suelo o dentro del coyote time
-        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded() || (Time.time - lastGroundedTime) <= coyoteTime))
+        if (Input.GetKeyDown(KeyCode.Space) && (IsGrounded() || CheckIfCanJump()))
         {
             Jump();
         }
     }
-
+    public bool CheckIfCanJump()
+    {
+        return (Time.time - lastGroundedTime) <= coyoteTime;
+    }
     /// <summary>
     /// L�gica para el salto f�sico.
     /// </summary>

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1953259897 &8574412962073106934
+TerrainLayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blue_Ore_6
+  m_DiffuseTexture: {fileID: 2800000, guid: 63ff84df7b84b194a98b627825d480b0, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 96d792ba59f904e46831ff4d3143703d, type: 3}
+  m_MaskMapTexture: {fileID: 2800000, guid: 6ecaf1c1672b20642acc72d4db387bcb, type: 3}
+  m_TileSize: {x: 2, y: 2}
+  m_TileOffset: {x: 0, y: 0}
+  m_Specular: {r: 0, g: 0, b: 0, a: 0}
+  m_Metallic: 0
+  m_Smoothness: 0
+  m_NormalScale: 1
+  m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
+  m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
+  m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
+  m_MaskMapRemapMax: {x: 1, y: 1, z: 1, w: 1}
