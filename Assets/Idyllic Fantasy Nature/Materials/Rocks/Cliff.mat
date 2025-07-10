@@ -128,7 +128,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Contrast: 0.55
     - _Coverage_Map_Scale: 10
-    - _Coverage_Mask_Scale: 2.5
+    - _Coverage_Mask_Scale: 2
     - _Coverage_Normal_Strength: 1
     - _Coverage_Smoothness: 0
     - _Cull: 2
