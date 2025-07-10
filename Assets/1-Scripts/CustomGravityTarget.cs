@@ -12,12 +12,11 @@ public class CustomGravityTarget : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         defaultGravity = Physics.gravity;
-        rb.useGravity = false; // Desactivamos la gravedad automática de Unity
+        rb.useGravity = false; 
     }
 
     void FixedUpdate()
     {
-        // Aplica la gravedad actual de forma manual
         if (useCustomGravity)
         {
             rb.AddForce(currentGravity, ForceMode.Acceleration);
@@ -40,7 +39,6 @@ public class CustomGravityTarget : MonoBehaviour
     }
     public Vector3 GetGravityDirection()
     {
-        // Devuelve la gravedad actual normalizada (siempre debe estar != Vector3.zero)
         return useCustomGravity ? currentGravity.normalized : defaultGravity.normalized;
     }
 

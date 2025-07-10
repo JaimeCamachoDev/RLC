@@ -24,10 +24,9 @@ public class CinemachineSetter : MonoBehaviour
         RemoveProcedural<CinemachineOrbitalFollow>();
         RemoveProcedural<CinemachineThirdPersonFollow>();
 
-        // Añade ThirdPerson y luego Orbital para forzar el bugfix
         var tps = cinemachineCamera.gameObject.AddComponent<CinemachineThirdPersonFollow>();
 
-        Destroy(tps); // Lo quitamos de inmediato
+        Destroy(tps);
 
         var orbital = cinemachineCamera.gameObject.AddComponent<CinemachineOrbitalFollow>();
         orbital.TrackerSettings = bindingMode;
