@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using Unity.Cinemachine.TargetTracking;
 using UnityEngine;
@@ -12,11 +13,14 @@ public class CinemachineSetter : MonoBehaviour
     [SerializeField] InputAxis verticalAxis;
     [SerializeField] InputAxis radialAxis;
 
-    private void Start()
+    IEnumerator Start()
     {
         ForceSwitchOrbital();
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false;
+        cinemachineCamera.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        cinemachineCamera.gameObject.SetActive(true);
     }
     [ContextMenu("Force Switch Orbital")]
     public void ForceSwitchOrbital()
