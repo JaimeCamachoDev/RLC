@@ -197,7 +197,7 @@ Material:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65882355}
     - _FoamScale: {r: 100, g: 400, b: 0, a: 0}
     - _FoamScale_1: {r: 100, g: 200, b: 0, a: 0}
-    - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Foam_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
     - _Foam_Scale: {r: 50, g: 50, b: 0, a: 0}
     - _RefractionScale: {r: 3, g: 12, b: 0, a: 0}
     - _Refraction_Scale: {r: 5, g: 2.5, b: 0, a: 0}
