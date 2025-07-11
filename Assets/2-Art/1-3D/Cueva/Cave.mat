@@ -126,7 +126,7 @@ Material:
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Contrast: 0.55
+    - _Contrast: 0.184
     - _Coverage_Map_Scale: 10
     - _Coverage_Mask_Scale: 2
     - _Coverage_Normal_Strength: 1
@@ -138,13 +138,13 @@ Material:
     - _DstBlend: 0
     - _ENABLE_COVERAGE: 1
     - _EnvironmentReflections: 1
-    - _Fade: 0.38
+    - _Fade: 0.715
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Level: 0
+    - _Level: 0.12
     - _Metallic: 0
-    - _Normal_Strength: 1
+    - _Normal_Strength: 0.331
     - _OVERLAY: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005

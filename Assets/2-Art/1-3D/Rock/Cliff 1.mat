@@ -144,7 +144,7 @@ Material:
     - _GlossyReflections: 0
     - _Level: 0.2
     - _Metallic: 0
-    - _Normal_Strength: 1
+    - _Normal_Strength: 0
     - _OVERLAY: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
