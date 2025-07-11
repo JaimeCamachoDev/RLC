@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3444308
 Transform:
   m_ObjectHideFlags: 0
@@ -277,6 +277,12 @@ MonoBehaviour:
   airRestriction: 0.2
   cameraTransform: {fileID: 1332760350}
   gravityTarget: {fileID: 0}
+  freeCamFollower: {fileID: 0}
+  followerConstraint: {fileID: 0}
+  freeCamSensitivity: 1
+  freeCamSensitivityMin: 0.1
+  freeCamSensitivityMax: 10
+  freeCamSensitivityStep: 0.1
 --- !u!114 &3444314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42593,7 +42599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2115501260
 Transform:
   m_ObjectHideFlags: 0
