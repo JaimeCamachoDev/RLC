@@ -90,7 +90,7 @@ Material:
     - _Float_1: 4.1
     - _Hardness: 1
     - _Hardness_1: 3.29
-    - _Metall: 4.39
+    - _Metall: 1
     - _Normal: 2
     - _QueueControl: 0
     - _QueueOffset: 0
