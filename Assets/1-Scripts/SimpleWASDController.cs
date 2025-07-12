@@ -21,6 +21,12 @@ public class SimpleWASDCameraController : MonoBehaviour
     public float freeCamSensitivityStep = 0.1f;
 
     bool isFreeCam = false;
+    [SerializeField] GameObject playerCam;
+    [SerializeField] GameObject freeCam;
+    [SerializeField] GameObject cross;
+
+    float freeCamYaw = 0f;
+    float freeCamPitch = 0f;
 
     void Awake()
     {
@@ -30,17 +36,47 @@ public class SimpleWASDCameraController : MonoBehaviour
         if (gravityTarget == null) gravityTarget = GetComponent<CustomGravityTarget>();
     }
 
+    void Start()
+    {
+        if (freeCamFollower != null)
+        {
+            Vector3 euler = freeCamFollower.eulerAngles;
+            freeCamYaw = euler.y;
+            freeCamPitch = euler.x;
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
             isFreeCam = !isFreeCam;
+            cross.SetActive(isFreeCam);
+            if (isFreeCam)
+            {
+                playerCam.SetActive(false);
+                freeCam.SetActive(true);
+            }
+            else
+            {
+                freeCam.SetActive(false);
+                playerCam.SetActive(true);
+            }
             if (followerConstraint != null)
                 followerConstraint.enabled = !isFreeCam;
         }
 
-        if (isFreeCam)
+        if (isFreeCam && freeCamFollower != null)
         {
+            float mouseX = Input.GetAxis("Mouse X") * freeCamSensitivity * 5f;
+            float mouseY = Input.GetAxis("Mouse Y") * freeCamSensitivity * 5f;
+
+            freeCamYaw += mouseX;
+            freeCamPitch -= mouseY;
+            freeCamPitch = Mathf.Clamp(freeCamPitch, -89f, 89f);
+
+            freeCamFollower.rotation = Quaternion.Euler(freeCamPitch, freeCamYaw, 0f);
+
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             if (Mathf.Abs(scroll) > 0.01f)
             {
@@ -52,7 +88,7 @@ public class SimpleWASDCameraController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isFreeCam)
+        if (isFreeCam && freeCamFollower != null)
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
@@ -61,18 +97,11 @@ public class SimpleWASDCameraController : MonoBehaviour
             if (Input.GetKey(KeyCode.E)) y += 1f;
             if (Input.GetKey(KeyCode.Q)) y -= 1f;
 
-            Vector3 gravityDir = gravityTarget != null ? gravityTarget.GetGravityDirection().normalized : Vector3.down;
-            Vector3 camForward = Vector3.ProjectOnPlane(cameraTransform.forward, gravityDir).normalized;
-            Vector3 camRight = Vector3.ProjectOnPlane(cameraTransform.right, gravityDir).normalized;
+            Vector3 move = (freeCamFollower.forward * v + freeCamFollower.right * h + Vector3.up * y).normalized;
 
-            Vector3 move = (camForward * v + camRight * h).normalized;
-            Vector3 moveVertical = gravityDir * -y;
-
-            Vector3 totalMove = (move + moveVertical).normalized;
-
-            if (totalMove.sqrMagnitude > 0.001f)
+            if (move.sqrMagnitude > 0.001f)
             {
-                freeCamFollower.position += totalMove * moveForce * freeCamSensitivity * Time.fixedDeltaTime;
+                freeCamFollower.position += move * moveForce * freeCamSensitivity * Time.fixedDeltaTime;
             }
             return;
         }
