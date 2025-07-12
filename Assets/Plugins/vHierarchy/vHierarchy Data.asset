@@ -390,6 +390,9 @@ MonoBehaviour:
     - goDatas_byGlobalId:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-e5e82677f792a8949aa4bac0b208df0b-919132149155446097-1958734867
+        - globalObjectIdString: GlobalObjectId_V1-2-e5e82677f792a8949aa4bac0b208df0b-1779339515-0
         values:
         - colorIndex: 0
           iconNameOrGuid: AudioSource Icon
+        - colorIndex: 1
+          iconNameOrGuid: 
