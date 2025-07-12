@@ -16,8 +16,6 @@ public class CinemachineSetter : MonoBehaviour
     IEnumerator Start()
     {
         ForceSwitchOrbital();
-        Cursor.lockState = CursorLockMode.Locked; 
-        Cursor.visible = false;
         cinemachineCamera.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.1f);
         cinemachineCamera.gameObject.SetActive(true);

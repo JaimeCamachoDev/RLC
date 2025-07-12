@@ -47,4 +47,12 @@ public class ResetAndCheckPoint : MonoBehaviour
         rb.position = lastSavedPosition;
         rb.MovePosition(lastSavedPosition);
     }
+    public void Unstuck()
+    {
+        Vector3 aux = rb.transform.position;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.position = aux+Vector3.up*1.5f;
+        rb.MovePosition(aux + Vector3.up * 1.5f);
+    }
 }
