@@ -14,7 +14,15 @@ namespace IdyllicFantasyNature
         /// When the player leaves the trigger, the particle system is placed at the last player position and starts playing
         /// </summary>
         /// <param name="other"></param>
-        private void OnTriggerExit(Collider other)
+        //private void OnTriggerExit(Collider other)
+        //{
+        //    if (other.CompareTag(_playerTag))
+        //    {
+        //        _leafParticleSystem.gameObject.transform.position = new Vector3(other.GetComponent<Transform>().position.x, _leafParticleSystem.gameObject.transform.position.y, other.GetComponent<Transform>().position.z);
+        //        _leafParticleSystem.Play();
+        //    }
+        //}
+        private void OnTriggerStay(Collider other)
         {
             if (other.CompareTag(_playerTag))
             {
@@ -22,6 +30,14 @@ namespace IdyllicFantasyNature
                 _leafParticleSystem.Play();
             }
         }
+        //private void OnTriggerEnter(Collider other)
+        //{
+        //    if (other.CompareTag(_playerTag))
+        //    {
+        //        _leafParticleSystem.gameObject.transform.position = new Vector3(other.GetComponent<Transform>().position.x, _leafParticleSystem.gameObject.transform.position.y, other.GetComponent<Transform>().position.z);
+        //        _leafParticleSystem.Play();
+        //    }
+        //}
     }
 }
 
