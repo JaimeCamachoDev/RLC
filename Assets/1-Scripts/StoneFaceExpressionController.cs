@@ -5,11 +5,13 @@ public class StoneFaceExpressionController : MonoBehaviour
     public StoneFaceBlinker faceBlinker;
     public Rigidbody rb;
 
+    [Header("Velocidad y Umbrales")]
     public float sadVelocityThreshold = 2.5f;
     public float dizzyVelocityThreshold = 8.5f;
     public float reactionDuration = 1.0f;
     public float idleTime = 3.0f;
 
+    [Header("Expresiones especiales")]
     public int idleExpressionA = 4;
     public int idleExpressionB = 5;
 
@@ -18,6 +20,10 @@ public class StoneFaceExpressionController : MonoBehaviour
     private float idleTimer = 0f;
     private Vector3 lastVelocity;
     private bool isIdle = false;
+
+    // NUEVO: Zona prioritaria
+    private bool zoneOverride = false;
+    private int zoneExpression = -1;
 
     void Awake()
     {
@@ -28,19 +34,27 @@ public class StoneFaceExpressionController : MonoBehaviour
 
     void Update()
     {
+        // Si estamos en modo zona, forzamos esa expresión
+        if (zoneOverride)
+        {
+            if (faceBlinker.currentExpression != zoneExpression)
+                faceBlinker.currentExpression = zoneExpression;
+            return;
+        }
+
         Vector3 vel = rb.linearVelocity;
         float speedChange = (vel - lastVelocity).magnitude;
         lastVelocity = vel;
 
         if (speedChange > dizzyVelocityThreshold)
         {
-            SetExpression(3, reactionDuration);
+            SetExpression(3, reactionDuration);  // Cara mareo
             isIdle = false;
             idleTimer = 0f;
         }
         else if (speedChange > sadVelocityThreshold)
         {
-            SetExpression(2, reactionDuration);
+            SetExpression(2, reactionDuration);  // Cara "daño"
             isIdle = false;
             idleTimer = 0f;
         }
@@ -55,15 +69,15 @@ public class StoneFaceExpressionController : MonoBehaviour
         }
         else
         {
-            // Si estaba en idle y detecta movimiento, vuelve instantáneo a la normal
             if (isIdle)
             {
-                targetExpression = 1;
+                targetExpression = 1;  // Vuelve a neutro
                 isIdle = false;
             }
             idleTimer = 0f;
+
             if (reactionTimer <= 0f)
-                targetExpression = 1;
+                targetExpression = 1;  // Estado normal
         }
 
         if (reactionTimer > 0f)
@@ -81,5 +95,19 @@ public class StoneFaceExpressionController : MonoBehaviour
     {
         targetExpression = expr;
         reactionTimer = duration;
+    }
+
+    // NUEVO: Llamado desde los triggers de zona
+    public void ForceZoneExpression(int expressionIndex)
+    {
+        zoneOverride = true;
+        zoneExpression = expressionIndex;
+        faceBlinker.currentExpression = zoneExpression;
+    }
+
+    public void ClearZoneExpression()
+    {
+        zoneOverride = false;
+        zoneExpression = -1;
     }
 }
