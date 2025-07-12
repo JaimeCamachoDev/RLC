@@ -51,6 +51,7 @@ public class SimpleWASDCameraController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             isFreeCam = !isFreeCam;
+            cross.SetActive(isFreeCam);
             if (isFreeCam)
             {
                 playerCam.SetActive(false);
