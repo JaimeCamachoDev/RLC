@@ -7,16 +7,14 @@ public class TimerDisplay : MonoBehaviour
     public float timer = 0f;
     public bool counting = true;
 
+    const string BestTimeKey = "BestTime";
+
     void Update()
     {
         if (counting)
             timer += Time.deltaTime;
 
-        int minutes = (int)(timer / 60f);
-        int seconds = (int)(timer % 60f);
-        int decimals = (int)((timer - Mathf.Floor(timer)) * 100f);
-
-        timerText.text = string.Format("{0:00}:{1:00},{2:00}", minutes, seconds, decimals);
+        timerText.text = FormatTime(timer);
     }
 
     public void ResetTimer()
@@ -32,5 +30,29 @@ public class TimerDisplay : MonoBehaviour
     public void StartTimer()
     {
         counting = true;
+    }
+
+    public string FormatTime(float t)
+    {
+        int minutes = (int)(t / 60f);
+        int seconds = (int)(t % 60f);
+        int decimals = (int)((t - Mathf.Floor(t)) * 100f);
+        return string.Format("{0:00}:{1:00},{2:00}", minutes, seconds, decimals);
+    }
+
+    public void SaveIfBest()
+    {
+        float best = PlayerPrefs.GetFloat(BestTimeKey, 0f);
+        if (best == 0f || timer < best)
+        {
+            PlayerPrefs.SetFloat(BestTimeKey, timer);
+            PlayerPrefs.SetString(BestTimeKey + "_String", FormatTime(timer));
+            PlayerPrefs.Save();
+        }
+    }
+
+    public static string GetBestTimeString()
+    {
+        return PlayerPrefs.GetString(BestTimeKey + "_String", "--:--,--");
     }
 }
