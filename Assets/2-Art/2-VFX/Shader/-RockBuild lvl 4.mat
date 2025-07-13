@@ -34,11 +34,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_1:
-        m_Texture: {fileID: 2800000, guid: 6a898f57b56b0f84ea45006ffbac097a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 25e8404e9d20aee479318ba8737bee01, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Rough_1:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f42ab3c4d06bba743a46899b6db2b897, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_501c2b504eeb47abab207baef27a5445_Texture_1_Texture2D:
@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Sides:
-        m_Texture: {fileID: 2800000, guid: cc09aef866325b64dbf8f4268c842957, type: 3}
+        m_Texture: {fileID: 2800000, guid: 94b8648c05465fb46bfa574e9aea873e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Top:
-        m_Texture: {fileID: 2800000, guid: d54c91d3a53ff1b4088561fb2368d95d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 94b8648c05465fb46bfa574e9aea873e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -87,12 +87,12 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 0
-    - _Float: 0.41
+    - _Float: -0.07
     - _Float_1: 4.1
     - _Hardness: 4
     - _Hardness_1: 2
     - _Metall: 1
-    - _Normal: 0.76
+    - _Normal: -2.74
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -100,14 +100,14 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _Tile: 0.03
-    - _Tile_Normal: 0.18
+    - _Tile_Normal: 0.06
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.5752181, g: 0.8396226, b: 0.41585082, a: 1}
-    - _Color_1: {r: 0.956295, g: 1, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_1: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3135659877585904262
