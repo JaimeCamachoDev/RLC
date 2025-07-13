@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.42352942, g: 0.61492085, b: 0.7529412, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -26595,13 +26595,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431250675}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07400208, y: -0.9705599, z: 0.13848914, w: -0.18264157}
-  m_LocalPosition: {x: 0.9, y: 196, z: -17.44}
+  m_LocalRotation: {x: -0.04783795, y: -0.9803887, z: 0.0019365315, w: -0.19116955}
+  m_LocalPosition: {x: 0.6743859, y: 196.10124, z: -16.860012}
   m_LocalScale: {x: 14.750027, y: -3.9541764, z: 24.18983}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 400055188}
-  m_LocalEulerAnglesHint: {x: 17.209, y: -200.468, z: 5.591}
+  m_LocalEulerAnglesHint: {x: 1.266, y: -202.009, z: 5.341}
 --- !u!64 &431250677
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26647,7 +26647,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0330f2ea13ed14449aa66afcc7b061de, type: 2}
+  - {fileID: 2100000, guid: 4543e9aac70156a4ca6e7ad2bce725ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
