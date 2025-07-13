@@ -8,7 +8,6 @@ public class ShroomControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("entro");
             onBounce.Invoke();
         }
     }
