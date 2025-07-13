@@ -40028,6 +40028,51 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &528326644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528326645}
+  - component: {fileID: 528326646}
+  m_Layer: 0
+  m_Name: ControllerFinish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528326645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528326644}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09, y: 253.93, z: 32.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1478655568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528326646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528326644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b8698429ab338498c80ba6f1eb58c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MainMenu
 --- !u!1 &528870224
 GameObject:
   m_ObjectHideFlags: 0
@@ -43468,7 +43513,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2024561571}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2816126746536090853, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_IsActive
@@ -43480,7 +43525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6983591303939360439, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_Name
-      value: Campfire CheckPoint (6)
+      value: END
       objectReference: {fileID: 0}
     - target: {fileID: 6983591303939360439, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_IsActive
@@ -43500,15 +43545,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755589876382194701, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.6513
+      value: -1.5386982
       objectReference: {fileID: 0}
     - target: {fileID: 7755589876382194701, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 182.6019
+      value: 270.15192
       objectReference: {fileID: 0}
     - target: {fileID: 7755589876382194701, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.8446
+      value: 24.665401
       objectReference: {fileID: 0}
     - target: {fileID: 7755589876382194701, guid: da21a040d8ad8e844a880daccc3498bf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -59390,7 +59435,7 @@ GameObject:
   - component: {fileID: 899165674}
   - component: {fileID: 899165677}
   - component: {fileID: 899165676}
-  - component: {fileID: 899165675}
+  - component: {fileID: 899165678}
   m_Layer: 6
   m_Name: Checkpoint (3)
   m_TagString: Untagged
@@ -59413,24 +59458,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 617711870}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
---- !u!114 &899165675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899165673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c703ab84d7cedfd4b8b0f0f994085fb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpoint: {fileID: 899165674}
-  vfx:
-  - {fileID: 617711872}
-  - {fileID: 617711871}
-  - {fileID: 1442007241}
-  - {fileID: 19778036}
 --- !u!65 &899165676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59460,6 +59487,93 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899165673}
   m_Mesh: {fileID: 2534964839176971238, guid: 19871bdb42b94134fb5a38a2a5926449, type: 3}
+--- !u!114 &899165678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899165673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f04db670a55de4d8fa6213c8b6b2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 617711871}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 617711872}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1442007241}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 19778036}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 528326646}
+        m_TargetAssemblyTypeName: SimpleSceneManager, Assembly-CSharp
+        m_MethodName: MWaitAndLoad
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3444310}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &899258764
 GameObject:
   m_ObjectHideFlags: 0
@@ -84884,6 +84998,7 @@ Transform:
   - {fileID: 574419456}
   - {fileID: 67069209}
   - {fileID: 1586335388}
+  - {fileID: 528326645}
   - {fileID: 1828428495}
   - {fileID: 1988471907}
   - {fileID: 75991073}
@@ -120952,7 +121067,6 @@ Transform:
   - {fileID: 117965136}
   - {fileID: 1798018976}
   - {fileID: 688466536}
-  - {fileID: 617711870}
   - {fileID: 715705586}
   - {fileID: 1080049682}
   - {fileID: 1577741300}
@@ -137653,4 +137767,5 @@ SceneRoots:
   - {fileID: 1650629891}
   - {fileID: 334764407}
   - {fileID: 404615094}
+  - {fileID: 617711869}
   - {fileID: 1478655568}
