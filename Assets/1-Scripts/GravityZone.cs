@@ -33,6 +33,7 @@ public class GravityZone : MonoBehaviour
     }
     public void PlaySound()
     {
+        if (gravitySounds.Length == 0) return;
         gravityAS.PlayOneShot(gravitySounds[Random.Range(0, gravitySounds.Length)]);
         StartCoroutine(RecoverSound());
     }

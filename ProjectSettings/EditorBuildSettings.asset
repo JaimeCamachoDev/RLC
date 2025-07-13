@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/3-Scenes/IsarScene.unity
-    guid: 08a24364072271a4eba94f509f3f9498
+    path: Assets/3-Scenes/MainMenu.unity
+    guid: b85e29c3bf9f5ea4484298b2885f31d0
+  - enabled: 1
+    path: Assets/3-Scenes/Game.unity
+    guid: a04ec77263796cb4199e3fafecd3e7ce
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
