@@ -6210,7 +6210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b8698429ab338498c80ba6f1eb58c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: IsarScene
+  sceneName: Game(Failsafe)
 --- !u!4 &1660678919
 Transform:
   m_ObjectHideFlags: 0
