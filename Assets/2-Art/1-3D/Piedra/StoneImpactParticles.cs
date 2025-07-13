@@ -8,6 +8,9 @@ public class StoneImpactParticles : MonoBehaviour
     private Rigidbody rb;
     private Vector3 lastVelocity;
 
+    [SerializeField] AudioSource rockAS;
+    [SerializeField] AudioClip[] rollingSounds;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,7 +34,12 @@ public class StoneImpactParticles : MonoBehaviour
                 impactEffect.transform.position = contact.point;
                 impactEffect.transform.rotation = Quaternion.LookRotation(contact.normal);
                 impactEffect.Play();
+                PlaySound();
             }
         }
+    }
+    public void PlaySound()
+    {
+        rockAS.PlayOneShot(rollingSounds[Random.Range(0, rollingSounds.Length)]);
     }
 }
