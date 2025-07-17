@@ -30,6 +30,7 @@ public class SimpleWASDCameraController : MonoBehaviour
 
     void Awake()
     {
+        Physics.gravity = new Vector3(0, -9.81f, 0);
         _moveForce = moveForce;
         rb = GetComponent<Rigidbody>();
         jumpController = GetComponent<JumpController>();
